@@ -1,6 +1,18 @@
+body {
+  background-color: #cccccc;
+  width: auto;
+  max-width: 50em;
+  border-radius: 0.25em;
+  padding-top: 0.25em;
+  padding-bottom: 1em;
+  margin-top: 1em ;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   margin-left: 2.5em;
-  margin-top: 1em;
+  margin-top: 0.25em;
 }
 
 li {
@@ -28,7 +40,11 @@ input {
 }
 
 #messages {
-  box-shadow: 0.25em 0.25em 0.25em 0.05em;
+  background-color: #eeeeee;
+  /* box-shadow: 0.05em 0.05em 0.05em 0.05em; */
+  border-radius: 0.5em;
+  border: 0.1em;
+  border-style: groove;
   width: 40em;
   height: auto;
   min-height: 5em;
@@ -36,3 +52,15 @@ input {
   margin-top: 1em; 
 }
 
+.label { 
+  margin-top: 1em;
+  margin-left: 5em;
+}
+
+.user-1 {
+  color: aquamarine;
+}
+
+.user-2 {
+  color: goldenrod;
+}

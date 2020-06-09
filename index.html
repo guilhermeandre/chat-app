@@ -11,11 +11,12 @@
   <h1>Chat App </h1>
   <form id="sendMsg">
     <label for="name">Name</label>
-    <input type="text-area" id="name">
+    <input type="text-area" id="name" >
     <label for="text">Message</label>
-    <input type="text-area" id="text">
+    <input type="text-area" id="text" placeholder="Your text here">
     <button type="submit">Send</button>
   </form>
+  <label for="messages" class="label">Messages:</label>
   <ol id= "messages"></ol>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/index.js"></script>
