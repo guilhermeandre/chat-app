@@ -1,0 +1,38 @@
+h1 {
+  margin-left: 2.5em;
+  margin-top: 1em;
+}
+
+li {
+  list-style: circle;
+  padding: 0.25em;
+}
+
+button {
+  margin-top: 1em;
+}
+
+input {
+  margin-bottom: 0.5em;
+}
+
+#sendMsg {
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+  margin-left: 5em;
+}
+
+#text {
+  padding: 1em;
+}
+
+#messages {
+  box-shadow: 0.25em 0.25em 0.25em 0.05em;
+  width: 40em;
+  height: auto;
+  min-height: 5em;
+  margin-left: 5em;
+  margin-top: 1em; 
+}
+
