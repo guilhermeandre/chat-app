@@ -28,6 +28,14 @@ input {
   margin-bottom: 0.5em;
 }
 
+li {
+  font-weight: 700;
+}
+
+p{
+  font-weight: 300;
+}
+
 #sendMsg {
   display: flex;
   flex-direction: column;
@@ -37,6 +45,7 @@ input {
 
 #text {
   padding: 1em;
+  color: #333333;
 }
 
 #messages {
@@ -58,9 +67,25 @@ input {
 }
 
 .user-1 {
-  color: aquamarine;
+  color: #093145;
 }
 
 .user-2 {
-  color: goldenrod;
+  color: #829356;
+}
+
+.user-3 {
+  color: #ebc944;
+}
+
+.user-4 {
+  color: #f26d21;
+}
+
+.user-5 {
+  color: #ad2a1a;
+}
+
+.user-6 {
+  color: #3c1361;
 }
