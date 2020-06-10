@@ -25,15 +25,16 @@ $msgForm.addEventListener('submit', (event) => {
   socket.emit('chatmsg', {msg: event.currentTarget.text.value, 
                           name: event.currentTarget.name.value, 
                           userId: $id, 
-                          class: `${ramdomClass}` }, 
+                          class: `${ramdomClass}`, 
+                          time: new Date().toLocaleString() }, 
   )
-	event.currentTarget.text.value = ''
+  event.currentTarget.text.value = ''
 })
 
 socket.on('chatmsg', (data) => {
   const newMsg = document.createElement('li')
   $msgList.appendChild(newMsg).className = data.class
-  newMsg.textContent = data.name + ' said: '
+  newMsg.textContent = data.time + ' ' + data.name + ' said: '
   const newText = document.createElement('p')
   newMsg.appendChild(newText).id = "text"  
   newText.textContent =  data.msg 
