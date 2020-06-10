@@ -2,9 +2,10 @@ const socket = io()
 
 const $id  = Math.random().toString(36).substr(2, 9);
 
+const userClass = ["user-1", "user-2", "user-3", "user-4", "user-5", "user-6"];  
+const ramdomClass = userClass[Math.floor(Math.random()*userClass.length)];
 
-const color = ["user-1", "user-2", "user-3", "user-4", "user-5"];
-const ramdomClass = color[Math.floor(Math.random()*color.length)];
+
 
 const $msgForm = document.getElementById('sendMsg')
 const $msgList = document.getElementById('messages')
