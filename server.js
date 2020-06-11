@@ -1,5 +1,6 @@
 // import express and assign to a variable
 const express = require ("express");
+const e = require("express");
 
 const app = express();
 
@@ -26,9 +27,9 @@ io.on('connection', function (socket) {
 	socket.on('chatmsg', (data) => {
 		socket.broadcast.emit('chatmsg', data)
 	})
-	socket.on('typing', (userName) => {
-		socket.broadcast.emit('typing', userName)
-		console.log(userName)
+
+	socket.on('typing', (data) => {
+		socket.broadcast.emit('typing', data) 
 	} )
 
 })

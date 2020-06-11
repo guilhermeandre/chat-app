@@ -4,23 +4,26 @@ const $msgForm = document.getElementById('sendMsg')
 const $msgList = document.getElementById('messages')
 const $name = document.getElementById('name')
 const $text = document.getElementById('text')
+const $isTyping = document.getElementById('is-typing')
+
+let typing = false;
+let timeout = undefined;
 
 let userName = ""
 while (userName == "") {
   userName = prompt("Please enter your name")
 }
 
-let emitTyping = false;
 
 $name.value = userName;
 $name.style.backgroundColor = "#999999";
 $name.style.pointerEvents = "none";
 
 $msgForm.addEventListener('submit', (event) => {
-	event.preventDefault()  
-  emitTyping = false
+  event.preventDefault()  
+  typing = false;  
 // Creating object to structure data 
-const msgData = {
+  const msgData = {
   msg: event.currentTarget.text.value, 
   name: event.currentTarget.name.value, 
   time: new Date().toLocaleString()
@@ -52,6 +55,7 @@ function renderMsg ({msg, name, time}, className) {
 
 socket.on('chatmsg', (data) => {
   renderMsg(data, "left");
+  
 })  
 
 // renderMsg(
@@ -60,18 +64,36 @@ socket.on('chatmsg', (data) => {
 
 
 
-// Event listener to check typing
-$text.addEventListener('keyup', (event) => {
-  console.log(emitTyping)
-  // Checking if the user is typing
-  if (!emitTyping) {
-    socket.emit('typing', $name.value);
-    console.log(`Is Typing`);
-    emitTyping = true;
-  };
-})
-//  
-socket.on('typing', (userName) => {
-  console.log(`${userName} is typing`);
 
+// Event listener to check typing
+$text.addEventListener('keypress', (event) => {
+    if (event.which != 10 ) {
+  // Checking if the user is typing
+    typing = true;
+    socket.emit('typing', {user:userName,typing:true})
+    clearTimeout(timeout) 
+    timeout=setTimeout(typingTimeout, 5000 ) 
+  } else {
+    clearTimeout(timeout)
+    typingTimeout()
+  }
+ })
+//  
+
+socket.on('typing', (data) => { 
+  if(data.typing == true) {
+  // console.log(`Type bitch true`)
+  $isTyping.textContent = `${data.user} is typing...`
+  // console.log(`${data.user} is typing`)
+  
+} else {
+  // console.log(`Type bitch False`)   
+  $isTyping.textContent = ``
+  // console.log(`${data.user} stopped typing`)
+  } 
 })
+
+function typingTimeout(){
+	typing=false
+	socket.emit('typing', {user:userName, typing:false})
+}
