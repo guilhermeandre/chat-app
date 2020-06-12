@@ -34,8 +34,6 @@ $msgForm.addEventListener('submit', (event) => {
 // Rendering the sender msg 
   renderMsg(msgData, "right")
   event.currentTarget.text.value = ''
-// Scrolling the page down to show the newest message
-  $msgList.scrollTop = $msgList.scrollHeight;
   
 })
 
@@ -52,6 +50,8 @@ function renderMsg ({msg, name, time}, className) {
 // Assigning the element to the parent
   $newMsg.appendChild($newText)
   $msgList.appendChild($newMsg)
+  // Scrolling the page down to show the newest message
+  $msgList.scrollTop = $msgList.scrollHeight;
  
 }
 
@@ -59,13 +59,6 @@ socket.on('chatmsg', (data) => {
   renderMsg(data, "left");
   
 })  
-
-// renderMsg(
-//   {msg: "testing", name: "John Doe", time: new Date().toLocaleString()}
-//   , "right");
-
-
-
 
 // Event listener to check typing
 $text.addEventListener('keypress', (event) => {
