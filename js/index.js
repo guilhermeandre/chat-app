@@ -41,14 +41,17 @@ function renderMsg ({msg, name, time}, className) {
 
 // Creating DOM elements
   const $newMsg = document.createElement('li')
+  const $newTime = document.createElement('p')
   const $newText = document.createElement('p')
 // Populating the element with data
-  $newMsg.className = className
-  $newMsg.textContent = time + ' ' + name + ' said: '
+  $newMsg.className = className  
+  $newTime.textContent = time 
   $newText.textContent = msg 
+  
 
 // Assigning the element to the parent
-  $newMsg.appendChild($newText)
+  $newMsg.appendChild($newTime).className = 'time'
+  $newMsg.appendChild($newText).className = 'mgs'  
   $msgList.appendChild($newMsg)
   // Scrolling the page down to show the newest message
   $msgList.scrollTop = $msgList.scrollHeight;
