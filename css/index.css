@@ -121,11 +121,10 @@ input[type="text"] {
   background-color: #346d57;
   font-weight: 700;
   color: #cceabb;
-  /* font-size: 1.25em; */
-  
   cursor: pointer;
   transition: all 0.2s linear;
   text-align: center;
+  outline: none;
 }
 
 .submit-button:hover {
