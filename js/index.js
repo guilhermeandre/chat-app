@@ -34,6 +34,8 @@ $msgForm.addEventListener('submit', (event) => {
 // Rendering the sender msg 
   renderMsg(msgData, "right")
   event.currentTarget.text.value = ''
+// Scrolling the page down to show the newest message
+  $msgList.scrollTop = $msgList.scrollHeight;
   
 })
 
@@ -98,8 +100,3 @@ function typingTimeout(){
 	socket.emit('typing', {user:userName, typing:false})
 }
 
-function autoScroll () {
-  $msgList.scrollTop = $msgList.scrollHeight;
-}
-
-setInterval(autoScroll,1000);

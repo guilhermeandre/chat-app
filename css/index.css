@@ -49,8 +49,9 @@ output {
   font-size: 1.25em;
 }
 
-.messages {  
-  position: relative;
+.messages { 
+  /* display: flex;  */
+  /* flex-direction: column-reverse; */
   background-color: #f1f1f1;
   list-style: none;
   padding: 1.25em 0.50em 0 0.50em;
