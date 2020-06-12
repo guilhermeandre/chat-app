@@ -51,7 +51,7 @@ ol {
 .title {
   text-align: center;
   font-family: var(--font-family-title);
-  color: #3f3f44;
+  color: #346d57;
   font-size: 2em;
 }
 
@@ -118,12 +118,19 @@ input[type="text"] {
   height: 3.5em;
   display: inline-block;
   border-radius: 50px;
-  background-color: #63d0a6;
-  border: 2px solid #63d0a3;
-  color: #fff;
+  background-color: #346d57;
+  font-weight: 700;
+  color: #cceabb;
+  /* font-size: 1.25em; */
+  
   cursor: pointer;
   transition: all 0.2s linear;
   text-align: center;
+}
+
+.submit-button:hover {
+  background-color: #428f71;
+  animation: 0.1s;
 }
 
 .user {
