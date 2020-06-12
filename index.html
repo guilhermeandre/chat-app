@@ -8,17 +8,23 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Chat App </h1>
-  <output id="is-typing"></output>
-  <form id="sendMsg">
-    <input type="text-area" id="name" >    
-    <label for="text">Message</label>
-    <input type="text-area" id="text" placeholder="Your text here">
-    <button type="submit">Send</button>
-  </form>
-  
-  <label for="messages" class="label">Messages:</label>
-  <ol id= "messages"></ol>
+  <section class = "box-wraper">
+    <header class="header-menu">
+    <h1 class="title">Chat App</h1>
+    </header>
+    <ol class ="messages" id="messages"></ol>
+    <form class ="form-wrapper" id="sendMsg">
+      <div class="user">
+      <label for="name">User:</label><output id="name"></output>     
+      </div>      
+      <div class="input-message"><input type="text"  id="text" placeholder="Your text here"></div>
+      <button type="submit" class="submit-button">Send</button> 
+      <div class="is-typing"> 
+        <output id="is-typing"></output>
+       </div> 
+   </form>
+   
+  </section>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/index.js"></script>
 </body>

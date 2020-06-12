@@ -6,6 +6,7 @@ const $name = document.getElementById('name')
 const $text = document.getElementById('text')
 const $isTyping = document.getElementById('is-typing')
 
+
 let typing = false;
 let timeout = undefined;
 
@@ -16,8 +17,7 @@ while (userName == "") {
 
 
 $name.value = userName;
-$name.style.backgroundColor = "#999999";
-$name.style.pointerEvents = "none";
+
 
 $msgForm.addEventListener('submit', (event) => {
   event.preventDefault()  
@@ -72,7 +72,7 @@ $text.addEventListener('keypress', (event) => {
     typing = true;
     socket.emit('typing', {user:userName,typing:true})
     clearTimeout(timeout) 
-    timeout=setTimeout(typingTimeout, 5000 ) 
+    timeout=setTimeout(typingTimeout, 2000 ) 
   } else {
     clearTimeout(timeout)
     typingTimeout()
@@ -97,3 +97,9 @@ function typingTimeout(){
 	typing=false
 	socket.emit('typing', {user:userName, typing:false})
 }
+
+function autoScroll () {
+  $msgList.scrollTop = $msgList.scrollHeight;
+}
+
+setInterval(autoScroll,1000);
