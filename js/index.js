@@ -57,7 +57,7 @@ function renderMsg ({msg, name, time}, className) {
   $msgList.scrollTop = $msgList.scrollHeight;
  
 }
-
+//Rendering the message to the receiver
 socket.on('chatmsg', (data) => {
   renderMsg(data, "left");
   
@@ -65,7 +65,8 @@ socket.on('chatmsg', (data) => {
 
 // Event listener to check typing
 $text.addEventListener('keypress', (event) => {
-    if (event.which != 10 ) {
+ // If key pressed it is different of RETURN 
+    if (event.which != 13 ) {
   // Checking if the user is typing
     typing = true;
     socket.emit('typing', {user:userName,typing:true})
@@ -78,14 +79,15 @@ $text.addEventListener('keypress', (event) => {
  })
 //  
 
+
 socket.on('typing', (data) => { 
   if(data.typing == true) {
-  // console.log(`Type bitch true`)
+
   $isTyping.textContent = `${data.user} is typing...`
   // console.log(`${data.user} is typing`)
   
 } else {
-  // console.log(`Type bitch False`)   
+  
   $isTyping.textContent = ``
   // console.log(`${data.user} stopped typing`)
   } 
