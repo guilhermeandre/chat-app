@@ -26,7 +26,7 @@ $msgForm.addEventListener('submit', (event) => {
   const msgData = {
   msg: event.currentTarget.text.value, 
   name: event.currentTarget.name.value, 
-  time: new Date().toLocaleString()
+  time: new Date().toLocaleTimeString()
   }
 // Sending to socket.emit Object data
   socket.emit('chatmsg', msgData)
@@ -45,7 +45,7 @@ function renderMsg ({msg, name, time}, className) {
   const $newText = document.createElement('p')
 // Populating the element with data
   $newMsg.className = className  
-  $newTime.textContent = time 
+  $newTime.textContent = time + ', ' + name + ':'
   $newText.textContent = msg 
   
 

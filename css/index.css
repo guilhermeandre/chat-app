@@ -1,12 +1,12 @@
 :root {
   --font-family-text: "Ubuntu", "Arial", sans-serif;
   --font-family-title: "Roboto", "Arial", sans-serif;
-  --bg-color:#fff2eb;
+  --bg-color:#f7f7f7;
   --title-color: #08291c;
-  --color-sender-box: #96bbcb;
-  --color-sender-text: #3d515a  ;
+  --color-sender-box: #b9d1dc;
+  --color-sender-text: #2d5668  ;
   --color-receiver-box: #6ecba0;
-  --color-receiver-text: #2c5c4b;
+  --color-receiver-text: #244a3d;
 }
 
 * {
@@ -35,12 +35,13 @@ ol {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10em;
+  margin-bottom: 10em;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: #f8f8f8;
 }
 
 .header-menu {
-   background-color: #fff;
+  background-color: #cceabb;
   border-radius: 0.5em 0.5em 0 0;
   width: 100%;
   padding: 1.25em 0 1em;
@@ -50,7 +51,7 @@ ol {
 .title {
   text-align: center;
   font-family: var(--font-family-title);
-  color: var(--title-color);
+  color: #3f3f44;
   font-size: 2em;
 }
 
@@ -117,8 +118,8 @@ input[type="text"] {
   height: 3.5em;
   display: inline-block;
   border-radius: 50px;
-  background-color: #a3d063;
-  border: 2px solid #a3d063;
+  background-color: #63d0a6;
+  border: 2px solid #63d0a3;
   color: #fff;
   cursor: pointer;
   transition: all 0.2s linear;
